@@ -1,6 +1,6 @@
-title: Minimal theme
+title: Wandroid
 logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
+description: Wandroid is a information flow analysis tool for for Android WebViews. 
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
