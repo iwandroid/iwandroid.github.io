@@ -1,6 +1,6 @@
-title: Iwandroid
+title: IWanDroid
 logo: /assets/img/logo.png
-description: Iwandroid is a information flow analysis tool for for Android WebViews. 
+description: IWanDroid is a information flow analysis tool for for Android WebViews. 
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-minimal
