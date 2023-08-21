@@ -9,10 +9,33 @@ layout: default
 
 
 # Tool
-*IWanDroid* is available at:
+*IWanDroid* in the executable form is available at: https://doi.org/10.5281/zenodo.8270545. 
+
+##Content of the Binary:
+ The folder contains 
+ 1. Dataset Folder: Contains two sub folders named Benchmarks and large-scale_apps. The Benchmarks folder contains the apps in Table V of the paper. The large-scale_apps folder contains all the large scale apps from Fdroid. The selection criteria is mentioned in the Dataset selection (Section V).
+ 2. Preprocessing folder contains the tool related to the Preprocessing step of our framework (Section IV-A).
+ 3. The sdk folder contains the Android.jar file.
+ 4. The iwanDroid-1.0-jar-with-dependencies.jar Jar file contains the implementation for Section IV-B.
+ 5. Source Code Folder contains the source code of IWanDroid.
+ 6. Other folders and scripts are used for setting up the docker and tool. 
+ 
+ ##Getting Started and Setup
+ We have setup everything in the docker file. The docker image already contains the benchmark apps. Large apps are present in the Dataset/large-scale_apps/largeapps.tgz. To run them, please copy them to the Docker image. To run IWanDroid, please follow the steps as below:
+
+1. Build the Docker image: "docker build -t iwandroid:1.1 ."
+2. Run the docker container: "docker run -it iwandroid:1.1"   
+3. The root of the docker container is /iwandroid/tool/. The benchmark apps are placed at /iwandroid/Dataset.
+4. To run the tool, please run iwandroid.sh from inside the /iwandroid/tool/ directory. (./iwandroid.sh)
+5. iwandroid.sh contains various parameters to start the analysis. The path of the preprocessing Database is /iwandroid/tool/Preprocessing/Database/Intent.sqlite
+6. To main content is present in the webview_prime table of the Intent.sqlite database.
+7. To view the content: sqlite3 Intent.sqlite --> select * from webview_prime;
+8. The overall output is stored in the /iwandroid/tool/logs/ folder
+9. To run the analysis on new apps, edit iwandroid.sh and provide the apk path after the -apks tag 
+10. To see the detail arguments, please execute: python3 run.py --help
 
 # Citation
-
+Tiwari, Abhishek, Prakash, Jyoti, & Hammer, Christian. (2023). iWanDroid: Demand-driven Information Flow Analysis of WebView in Android Hybrid Apps (1.0) [Data set]. The 34th IEEE International Symposium on Software Reliability Engineering (ISSRE), Florence. Zenodo. https://doi.org/10.5281/zenodo.8270545
 # People
 
 - Abhishek Tiwari
